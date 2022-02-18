@@ -9,6 +9,7 @@ import Productos from './views/Productos';
 import Blog from './views/Blog';
 import Precios from './views/Precios';
 import Perfil from './views/Perfil';
+import Clima from './views/Clima';
 
 
 ReactDOM.render(
@@ -21,6 +22,7 @@ ReactDOM.render(
           <Route path="productos" element={ <Productos /> }/>
           <Route path="blog" element={ <Blog /> }/>
           <Route path="perfil" element={ <Perfil /> }/>
+          <Route path="clima" element={ <Clima /> }/>
         </Route>
       </Routes>    
     </UserProvider>

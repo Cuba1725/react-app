@@ -2,7 +2,7 @@
 import React from 'react';
 import { CssBaseline} from '@mui/material';
 import Navbar from './Navbar';
-import { Outlet } from 'react-router-dom';
+
 
 
 const Home = () => {
@@ -13,7 +13,7 @@ const Home = () => {
     <>
     <CssBaseline />
       <Navbar />
-      <Outlet />     
+         
      
     </>
   )
