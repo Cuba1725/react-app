@@ -152,8 +152,7 @@ const Navbar = (props) => {
         <Box
         component="main"        
         sx={{ 
-            flexGrow: 1, 
-            p: 3, 
+            flexGrow: 1,              
             width: { sm: `calc(100% - ${drawerWidth}px)` },            
         }}
       > 
