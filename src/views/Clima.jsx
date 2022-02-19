@@ -10,7 +10,7 @@ import {
 
 const Item = styled(Paper)(({ theme }) => ({
     ...theme.typography.body2,
-    padding: theme.spacing(1),
+    padding: theme.spacing(2),
     textAlign: 'center',
     color: theme.palette.text.secondary,
   }));
@@ -30,8 +30,8 @@ const Clima = () => {
   return (
     <>
     <Toolbar />
-    <Box sx={{ flexGrow: 1, m: 2 }}>
-    <Grid container spacing={2}>
+    <Box sx={{ flexGrow: 1}}>
+    <Grid container spacing={1}>
 
       <Grid item xs={12} md={10} sx={{mx: 'auto'}}>  
           <Item >

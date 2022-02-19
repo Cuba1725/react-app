@@ -21,7 +21,7 @@ const Principal = () => {
   return (
     <>
     <Toolbar />
-    <Box sx={{ flexGrow: 1, m: 2 }}>
+    <Box sx={{ flexGrow: 1}}>
     <Grid container spacing={2}>
       
       <Grid item xs={12} md={3} sx={{mx: 'auto'}}>
@@ -34,7 +34,7 @@ const Principal = () => {
         </Link>
       </Grid>
 
-      <Grid item xs={12} md={3} sx={{mx: 'auto'}}>
+     {/*  <Grid item xs={12} md={3} sx={{mx: 'auto'}}>
         <Item>
          
         </Item>
@@ -50,7 +50,7 @@ const Principal = () => {
         <Item>
          
         </Item>
-      </Grid>
+      </Grid> */}
 
     </Grid>
   </Box>

@@ -10,13 +10,15 @@ import { UserContext } from '../context/UserProvider';
 const Sidebar = () => {
 
     const { user } = useContext(UserContext);
-
+    
     const lista = [
         {nombre: 'Inicio', icon: <HomeIcon />, url: '/'}, 
         {nombre: 'Productos', icon: <CategoryIcon />, url: '/productos'}, 
         {nombre: 'Precios', icon: <AttachMoneyIcon />, url: '/precios'},
         {nombre: 'Blog', icon: <RssFeedIcon />, url: '/blog'}
     ];
+
+ 
 
 
   return (
@@ -25,7 +27,7 @@ const Sidebar = () => {
         <Typography sx={{ p:2 }} variant='h6'>{user.displayName}</Typography>        
         <Divider />
         {lista.map((item) => (
-            <ListItem button key={item.nombre}>
+            <ListItem button key={item.nombre} >
                 <ListItemIcon>
                     {item.icon}
                 </ListItemIcon>

@@ -33,6 +33,7 @@ const Navbar = (props) => {
     const [mobileOpen, setMobileOpen] = React.useState(false);
 
     const handleDrawerToggle = () => {
+        const toggler = 'hola';        
         setMobileOpen(!mobileOpen);
     };
     
@@ -126,7 +127,7 @@ const Navbar = (props) => {
           container={container}
           variant="temporary"
           open={mobileOpen}
-          onClose={handleDrawerToggle}
+          onClick={handleDrawerToggle}
           ModalProps={{
             keepMounted: true, // Better open performance on mobile.
           }}

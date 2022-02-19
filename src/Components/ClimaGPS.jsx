@@ -17,14 +17,13 @@ const ClimaGPS = ({ ciudad }) => {
   
   
   const pintarClima = async (ciudad) => {
-    console.log(ciudad);
+    
     
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&units=metric&appid=d3393ca241c12038ac4fb8a9a198e614&lang=es`;
 
      try {
        const res = await fetch(url);
-       const data = await res.json();
-       console.log(data)
+       const data = await res.json();       
        setClima({
         temperature: Math.round(data.main.temp),
         wind: Math.round(data.wind.speed),
