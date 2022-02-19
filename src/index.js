@@ -20,7 +20,7 @@ ReactDOM.render(
           <Route index element={ <Principal /> } />
           <Route path="precios" element={ <Precios/> }/>
           <Route path="productos" element={ <Productos /> }/>
-          <Route path="blog" element={ <Blog /> }/>
+          <Route path="tareas" element={ <Blog /> }/>
           <Route path="perfil" element={ <Perfil /> }/>
           <Route path="clima" element={ <Clima /> }/>
         </Route>

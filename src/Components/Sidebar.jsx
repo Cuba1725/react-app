@@ -4,7 +4,8 @@ import { List, ListItem, ListItemIcon, ListItemText, Divider, Typography } from 
 import HomeIcon from '@mui/icons-material/Home';
 import CategoryIcon from '@mui/icons-material/Category';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
-import RssFeedIcon from '@mui/icons-material/RssFeed';
+import CloudOutlinedIcon from '@mui/icons-material/CloudOutlined';
+import AddToQueueOutlinedIcon from '@mui/icons-material/AddToQueueOutlined';
 import { UserContext } from '../context/UserProvider';
 
 const Sidebar = () => {
@@ -12,10 +13,9 @@ const Sidebar = () => {
     const { user } = useContext(UserContext);
     
     const lista = [
-        {nombre: 'Inicio', icon: <HomeIcon />, url: '/'}, 
-        {nombre: 'Productos', icon: <CategoryIcon />, url: '/productos'}, 
-        {nombre: 'Precios', icon: <AttachMoneyIcon />, url: '/precios'},
-        {nombre: 'Blog', icon: <RssFeedIcon />, url: '/blog'}
+        {nombre: 'Inicio', icon: <HomeIcon />, url: '/'},
+        {nombre: 'Clima', icon: <CloudOutlinedIcon />, url: '/clima'},
+        {nombre: 'Tareas', icon: <AddToQueueOutlinedIcon />, url: '/tareas'}
     ];
 
  
@@ -25,7 +25,7 @@ const Sidebar = () => {
     <>    
     <List sx={{ paddingTop: 0 }}>
         <Typography sx={{ p:2 }} variant='h6'>{user.displayName}</Typography>        
-        <Divider />
+        <Divider variant="middle" />
         {lista.map((item) => (
             <ListItem button key={item.nombre} >
                 <ListItemIcon>

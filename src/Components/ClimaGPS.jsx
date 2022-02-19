@@ -72,7 +72,7 @@ const ClimaGPS = ({ ciudad }) => {
           </Grid>
 
 
-          <Grid item xs={10} md={6} sx={{mx: 'auto'}}>
+          <Grid item xs={12} md={6} sx={{mx: 'auto'}}>
           <Item><Typography>Humedad: {clima.humidity}</Typography></Item>          
           </Grid>
 

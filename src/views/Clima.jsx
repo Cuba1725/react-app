@@ -10,7 +10,7 @@ import {
 
 const Item = styled(Paper)(({ theme }) => ({
     ...theme.typography.body2,
-    padding: theme.spacing(2),
+    padding: theme.spacing(1),
     textAlign: 'center',
     color: theme.palette.text.secondary,
   }));
@@ -42,7 +42,7 @@ const Clima = () => {
                 autoComplete='off'
             >
             <SearchIcon />
-            <TextField color='primary' id="search" label="Buscar..." variant="standard" />
+            <TextField color='primary' id="search" placeholder="Buscar..." variant="standard" />
             <Button sx={{ display: 'none' }} type='submit' ></Button>
             </Box>
           </Item>                  

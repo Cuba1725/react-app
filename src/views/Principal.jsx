@@ -1,9 +1,10 @@
 import React from 'react'
 import { 
-  Toolbar, Box, Grid, 
+  Toolbar, Box, Grid, Card, CardMedia,
   styled, Paper, Typography
 } from '@mui/material';
 import { Link } from 'react-router-dom';
+import mendoza from '../image/mendoza.jpg';
 
 
 //FUNCIONES
@@ -24,12 +25,18 @@ const Principal = () => {
     <Box sx={{ flexGrow: 1}}>
     <Grid container spacing={2}>
       
-      <Grid item xs={12} md={3} sx={{mx: 'auto'}}>
+      <Grid item xs={12} sx={{mx: 'auto'}}>
         <Link to='/clima' style={{ 
                     textDecoration: 'none', 
                     color: 'inherit'}}>
           <Item>
-            <Typography variant='h5'>App Clima</Typography>
+            <Card>
+              <CardMedia
+                component='img'
+                height='250'
+                image={mendoza}
+                />
+            </Card>
           </Item>          
         </Link>
       </Grid>

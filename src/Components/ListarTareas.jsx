@@ -32,20 +32,18 @@ const ListarTareas = ({ arrayTareas, setArrayTareas }) => {
     <TableContainer component={Paper}>
         <Table sx={{ maxWidth: 750, mx: 'auto'  }} aria-label="simple tabla">
             <TableHead>
-                <TableRow>
-                    <TableCell>ID</TableCell>
+                <TableRow>                    
                     <TableCell>Tarea</TableCell>
-                    <TableCell>Eliminar</TableCell>
+                    <TableCell align="right">Eliminar</TableCell>
                 </TableRow>
             </TableHead>
              <TableBody>
                 {arrayTareas.map((doc) => (
                     <TableRow key={doc.id}
                     sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-            >
-                <TableCell component="th" scope="row">{doc.id}</TableCell>
+            >                
                 <TableCell>{doc.descripcion}</TableCell>
-                <TableCell><IconButton onClick={() => eliminarTarea(doc.id)} ><DeleteIcon /></IconButton></TableCell>
+                <TableCell align="right"><IconButton onClick={() => eliminarTarea(doc.id)} ><DeleteIcon /></IconButton></TableCell>
             </TableRow>
                 ))}
             </TableBody>
