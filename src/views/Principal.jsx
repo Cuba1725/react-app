@@ -1,10 +1,11 @@
 import React from 'react'
 import { 
   Toolbar, Box, Grid, Card, CardMedia,
-  styled, Paper, Typography
+  styled, Paper
 } from '@mui/material';
-import { Link } from 'react-router-dom';
 import mendoza from '../image/mendoza.jpg';
+import AgregarFoto from '../Components/AgregarFoto'
+import Posteos from '../Components/Posteos';
 
 
 //FUNCIONES
@@ -22,42 +23,16 @@ const Principal = () => {
   return (
     <>
     <Toolbar />
-    <Box sx={{ flexGrow: 1}}>
+    <Box sx={{ flexGrow: 1, mt: 1 }}>
     <Grid container spacing={2}>
       
-      <Grid item xs={12} sx={{mx: 'auto'}}>
-        <Link to='/clima' style={{ 
-                    textDecoration: 'none', 
-                    color: 'inherit'}}>
-          <Item>
-            <Card>
-              <CardMedia
-                component='img'
-                height='250'
-                image={mendoza}
-                />
-            </Card>
-          </Item>          
-        </Link>
-      </Grid>
-
-     {/*  <Grid item xs={12} md={3} sx={{mx: 'auto'}}>
-        <Item>
-         
-        </Item>
+      <Grid item xs={11} md={6}sx={{mx: 'auto'}}>
+        <AgregarFoto />        
       </Grid>  
 
-      <Grid item xs={12} md={3} sx={{mx: 'auto'}}>
-        <Item>
-         
-        </Item>
+      <Grid item xs={11} md={10} sx={{mx: 'auto'}}>
+        <Posteos />         
       </Grid>    
-
-       <Grid item xs={12} md={3} sx={{mx: 'auto'}}>
-        <Item>
-         
-        </Item>
-      </Grid> */}
 
     </Grid>
   </Box>

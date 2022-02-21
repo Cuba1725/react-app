@@ -17,7 +17,7 @@ const Item = styled(Paper)(({ theme }) => ({
 
 const Clima = () => {
 
-  const [ciudad, setCiudad] = useState('Pilar');
+  const [ciudad, setCiudad] = useState('Maquinista Savio');
 
     const enviarForm = (e) => {
         e.preventDefault();
@@ -30,10 +30,10 @@ const Clima = () => {
   return (
     <>
     <Toolbar />
-    <Box sx={{ flexGrow: 1}}>
-    <Grid container spacing={1}>
+    <Box sx={{ flexGrow: 1, mt: 2}}>
+    <Grid container spacing={2}>
 
-      <Grid item xs={12} md={10} sx={{mx: 'auto'}}>  
+      <Grid item xs={11} md={10} sx={{mx: 'auto'}}>  
           <Item >
             <Box 
                 component='form'
@@ -48,7 +48,7 @@ const Clima = () => {
           </Item>                  
       </Grid>
 
-      <Grid item xs={12} md={10} sx={{mx: 'auto'}}>  
+      <Grid item xs={11} md={10} sx={{mx: 'auto'}}>  
           <Item >
             <ClimaGPS ciudad={ciudad} />
           </Item>                  

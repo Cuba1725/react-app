@@ -11,8 +11,8 @@ const theme = createTheme({
     mode: 'dark',
     common: { black: '#1e2d53', white: '#edf2f4' },
     background: { paper: '#26282B', default: '#26282B' },
-    primary: { dark: '#33658a', main: '#f7f7f7', light: '#ffba08' },
-    secondary: { dark: '#33658a', main: '#2f4550', light: '#ffba08' },
+    primary: { dark: '#3B5998', main: '#3B5998', light: '#ffba08' },
+    secondary: { dark: '#33658a', main: '#fcfcfc', light: '#ffba08' },
     text: { primary: '#F7F7F7' }
   }
 })
