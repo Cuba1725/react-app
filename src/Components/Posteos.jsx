@@ -5,6 +5,7 @@ import {
 } from '@mui/material';
 import { firebaseApp } from '../Credenciales';
 import { getFirestore, getDocs, collection } from 'firebase/firestore'
+import moment from 'moment';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
@@ -32,28 +33,20 @@ const Posteos = () => {
 
     React.useEffect(() => {
       getPosteos()
-    }, []);
+    }, [posteos]);
 
-    const like = async (idLike) => {
-      const likear = posteos.filter(
-        (objetoLikeado) => objetoLikeado.id === idLike
-        );
-        setMeGusta(!meGusta);
-      console.log(idLike);
-    }
-  
-
+    
   return (
    <>
-    {posteos.map((item) => (
-      <Card key={item.id} sx={{maxWidth: 345, mx: 'auto', my: 1}}>  
+    {posteos.map((item) => (      
+      <Card elevation={0} key={item.id} sx={{maxWidth: 345, mx: 'auto', my: 1}}>  
         <CardHeader 
         avatar={<Avatar alt={item.nombre} src={item.user} />}
         action={ <IconButton aria-label='configuración'>
             <MoreVertIcon />
         </IconButton> }
         title={item.nombre}
-        subheader='Febrero 20, 2022'
+        subheader={moment().startOf(item.id).fromNow()}
         />        
         <CardMedia
           component='img'
@@ -69,7 +62,7 @@ const Posteos = () => {
             </Typography>
         </CardContent>
         <CardActions disableSpacing>
-          <IconButton aria-label='Me gusta' onClick={() => like(item.id)}>
+          <IconButton aria-label='Me gusta' >
               {meGusta ? <FavoriteIcon color='error'/> : <FavoriteBorderIcon />}
           </IconButton>
           <IconButton aria-label='Comentar'>

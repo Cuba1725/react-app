@@ -4,6 +4,7 @@ import {
     Stack, Avatar, styled, Badge, Typography,
     IconButton, Button, Modal, Box, TextField, 
 } from '@mui/material';
+import moment from 'moment';
 import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
 import { storage } from '../Credenciales';
 import { ref, getDownloadURL, uploadBytesResumable } from 'firebase/storage';
@@ -68,9 +69,10 @@ const AgregarFoto = () => {
   const enviarPost = async (e) => {
       e.preventDefault();
       const textoAEnviar = e.target.texto.value;
+      const idDoc = +new Date();
       try {
         const docRef = await addDoc(collection(db, 'posteos'), {
-            id: +new Date(),
+            id: new Date().getTime(),
             texto: textoAEnviar,
             image: url,
             user: user.photoURL,
@@ -88,7 +90,12 @@ const AgregarFoto = () => {
       e.target.texto.value = '';      
   }
 
+const hour = 'February 27, 2022 6:50 pm';
+console.log(hour);
+const hora = moment().startOf(hour).fromNow();
+console.log(hora);
   
+   
   const [progress, setProgress] = useState(0);
   const [url, setUrl] = useState(null);
 
@@ -130,9 +137,9 @@ const AgregarFoto = () => {
             src={user.photoURL} 
         />
         </StyledBadge>
-        <Button onClick={handleOpen} style={{ width: '100%' }} variant='outlined' color="secondary" size="small">
+        {/* <Button onClick={handleOpen} style={{ width: '100%' }} variant='outlined' color="secondary" size="small">
             ¿En qué estás pensando?
-        </Button>     
+        </Button>  */}    
         <Modal
         open={open}
         onClose={handleClose}
@@ -170,7 +177,7 @@ const AgregarFoto = () => {
         </Modal> 
         <label htmlFor='icon-button-file'>
           <Input accept='image/*' id='icon-button-file' type='file' onChange={archivoHandler} />
-          <IconButton component='span'>
+          <IconButton component='span' onClick={handleOpen}>
             <AddPhotoAlternateIcon />
         </IconButton>
         </label>
