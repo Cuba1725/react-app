@@ -1,6 +1,6 @@
 import React from 'react';
 import { createContext } from 'react'
-import firebaseApp from '../Credenciales';
+import { firebaseApp } from '../Credenciales';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 const auth = getAuth(firebaseApp);
 

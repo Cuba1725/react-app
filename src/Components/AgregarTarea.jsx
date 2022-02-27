@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { Box, TextField, IconButton, } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
-import firebaseApp from '../Credenciales';
+import { firebaseApp } from '../Credenciales';
 import { getFirestore, updateDoc, doc } from 'firebase/firestore'
 import { UserContext } from '../context/UserProvider';
 

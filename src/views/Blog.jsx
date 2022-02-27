@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import AgregarTarea from '../Components/AgregarTarea';
 import ListarTareas from '../Components/ListarTareas';
-import firebaseApp from '../Credenciales';
+import { firebaseApp } from '../Credenciales';
 import { getFirestore, doc, getDoc, setDoc } from 'firebase/firestore';
 import { Toolbar, Box, Grid, styled, Paper, } from '@mui/material'
 import { UserContext } from '../context/UserProvider'; 

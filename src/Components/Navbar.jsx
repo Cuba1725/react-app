@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import firebaseApp from '../Credenciales'
+import { firebaseApp } from '../Credenciales'
 import { 
     AppBar, Box, Toolbar, IconButton, Typography,
     Menu, Container, Avatar, ListItemIcon, Tooltip , MenuItem,

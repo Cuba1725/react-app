@@ -1,9 +1,8 @@
 import React from 'react'
 import { 
-  Toolbar, Box, Grid, Card, CardMedia,
-  styled, Paper
+  Toolbar, Box, Grid, styled, Paper
 } from '@mui/material';
-import mendoza from '../image/mendoza.jpg';
+
 import AgregarFoto from '../Components/AgregarFoto'
 import Posteos from '../Components/Posteos';
 

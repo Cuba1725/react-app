@@ -4,7 +4,7 @@ import {
     TableHead, TableRow, Paper, IconButton,
 } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
-import firebaseApp from '../Credenciales';
+import { firebaseApp } from '../Credenciales';
 import { getFirestore, updateDoc, doc } from 'firebase/firestore';
 import { UserContext } from '../context/UserProvider';
 
