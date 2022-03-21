@@ -15,7 +15,6 @@ const ClimaGPS = ({ ciudad }) => {
   }, [ciudad])
 
   
-  
   const pintarClima = async (ciudad) => {
     
     

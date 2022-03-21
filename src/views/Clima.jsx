@@ -5,6 +5,7 @@ import {
   } from '@mui/material';
   import SearchIcon from '@mui/icons-material/Search';
   import ClimaGPS from '../Components/ClimaGPS';
+import ClimaXgps from '../Components/ClimaXgps';
 
 
 
@@ -32,6 +33,12 @@ const Clima = () => {
     <Toolbar />
     <Box sx={{ flexGrow: 1, mt: 2}}>
     <Grid container spacing={2}>
+
+    <Grid item xs={11} md={10} sx={{mx: 'auto'}}>  
+          <Item >
+            <ClimaXgps />
+          </Item>                  
+      </Grid> 
 
       <Grid item xs={11} md={10} sx={{mx: 'auto'}}>  
           <Item >
