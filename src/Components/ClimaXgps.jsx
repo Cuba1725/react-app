@@ -37,7 +37,7 @@ const ClimaXgps = () => {
     
       const geoClima = async() => {
         console.log(lat, long);
-        const url2 = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${key}&units=metric`
+        const url2 = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${key}&units=metric&lang=es`
     
         try {
           const resp = await fetch(url2);

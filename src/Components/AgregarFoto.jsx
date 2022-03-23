@@ -90,10 +90,9 @@ const AgregarFoto = () => {
       e.target.texto.value = '';      
   }
 
-const hour = 'February 27, 2022 6:50 pm';
-console.log(hour);
-const hora = moment().startOf(hour).fromNow();
-console.log(hora);
+/* const hour = 'February 27, 2022 6:50 pm';
+const hora = moment(hour).fromNow();
+console.log(hora); */
   
    
   const [progress, setProgress] = useState(0);

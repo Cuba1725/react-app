@@ -35,22 +35,26 @@ const Posteos = () => {
       getPosteos()
     }, [posteos]);
 
+    const hora = (id) => {
+      moment.locale('es');
+      moment(id).fromNow();
+    }
     
   return (
    <>
-    {posteos.map((item) => (      
-      <Card elevation={0} key={item.id} sx={{maxWidth: 345, mx: 'auto', my: 1}}>  
+    {posteos.map((item) => (        
+      <Card elevation={1} key={item.id} sx={{maxWidth: 345, mx: 'auto', my: 1}}>  
         <CardHeader 
         avatar={<Avatar alt={item.nombre} src={item.user} />}
         action={ <IconButton aria-label='configuración'>
             <MoreVertIcon />
         </IconButton> }
         title={item.nombre}
-        subheader={moment().startOf(item.id).fromNow()}
+        subheader={hora(item.id)}        
         />        
         <CardMedia
           component='img'
-          width='344'
+          width='342'
           height='auto'
           image={item.image}
           alt={item.texto}
@@ -60,18 +64,7 @@ const Posteos = () => {
             <Typography variante='body2'>
               {item.texto}
             </Typography>
-        </CardContent>
-        <CardActions disableSpacing>
-          <IconButton aria-label='Me gusta' >
-              {meGusta ? <FavoriteIcon color='error'/> : <FavoriteBorderIcon />}
-          </IconButton>
-          <IconButton aria-label='Comentar'>
-              <ChatBubbleOutlineRoundedIcon/>
-          </IconButton>
-          <IconButton style={{ marginLeft: 'auto' }} aria-label='Compartir'>
-              <ReplyRoundedIcon/>
-          </IconButton>
-        </CardActions>
+        </CardContent>        
     </Card> 
       ))}      
     </>    
