@@ -1,25 +1,21 @@
 import React, { useState } from 'react';
 import { 
-    styled, Card, CardHeader, CardMedia, CardContent, 
-    CardActions, Collapse, Avatar, IconButton, Typography,    
+    Card, CardHeader, CardMedia, CardContent, 
+    Avatar, IconButton, Typography,    
 } from '@mui/material';
 import { firebaseApp } from '../Credenciales';
 import { getFirestore, getDocs, collection } from 'firebase/firestore'
 import moment from 'moment';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import ChatBubbleOutlineRoundedIcon from '@mui/icons-material/ChatBubbleOutlineRounded';
-import ReplyRoundedIcon from '@mui/icons-material/ReplyRounded';
+import 'moment/locale/es';
+
 
 
 const db = getFirestore(firebaseApp);
 
 const Posteos = () => {
 
-    const [posteos, setPosteos] = useState([]);
-    const [meGusta, setMeGusta ] = useState(false);
-    const [img, setImg] = useState(null);
+    const [posteos, setPosteos] = useState([]);        
 
     const getPosteos = async ( ) => {
       const arrayPosteos = [];
@@ -34,11 +30,16 @@ const Posteos = () => {
     React.useEffect(() => {
       getPosteos()
     }, [posteos]);
-
-    const hora = (id) => {
-      moment.locale('es');
-      moment(id).fromNow();
-    }
+    
+    posteos.sort((a, b) => {
+      if (b.id > a.id) {
+        return 1;
+      }
+      if (b.id < a.id) {
+        return -1;
+      }
+      return 0;
+    })
     
   return (
    <>
@@ -50,7 +51,7 @@ const Posteos = () => {
             <MoreVertIcon />
         </IconButton> }
         title={item.nombre}
-        subheader={hora(item.id)}        
+        subheader={moment(item.id).fromNow()}        
         />        
         <CardMedia
           component='img'
